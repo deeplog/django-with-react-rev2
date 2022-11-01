@@ -2,6 +2,8 @@
 -----
 [01. 프로젝트 초기환경 설정](#01--프로젝트-초기환경-설정)
 
+[02. Bootstrap4를 활용한 레이아웃 구현](#02.-Bootstrap4를-활용한-레이아웃-구현)
+
 ## 01.  프로젝트 초기환경 설정
 
 * python env 를 이용해 가상환경 셋팅
@@ -117,7 +119,42 @@
 
 [목차](#목차)
 
+## 02. Bootstrap4를 활용한 레이아웃 구현
 
+* bootstrap4.x.x 다운로드 및 static으로 복사,  jquery-3.x.x.min.js 다운로드후 복사
+
+* urls.py에 템플릿 뷰 삽입
+
+  ``` python
+  urlpatterns = [
+      path('',TemplateView.as_view(template_name='root.html'), name='root'),
+  ]
+  ```
+
+* root.html  구현
+
+  ```html
+  {% extends "layout.html" %}
+  
+  {% block content %}
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  Instagram
+              </div>
+          </div>
+      </div>
+  {% endblock %}
+  ```
+
+* root.html의 부모 html 인 layout.html 구현 
+
+  * https://getbootstrap.com/docs/4.4/examples/pricing/ 을 참조해서 구현한다. 
+
+
+
+
+[목차](#목차)
 
 
 
